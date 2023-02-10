@@ -42,7 +42,7 @@ variable "images" {
 
 data "oci_identity_availability_domain" "ad" {
   compartment_id = var.tenancy_ocid
-  id = var.id
+  ad_number      = var.ad_region_mapping[var.region]
 }
 
 resource "oci_core_virtual_network" "tcb_vcn" {
